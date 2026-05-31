@@ -22,12 +22,6 @@ function Roadmap() {
       phase: 3,
       isCurrent: false,
       features: ['autoSorting', 'smartRacking', 'endToEnd']
-    },
-    {
-      key: 'dark',
-      phase: 4,
-      isCurrent: false,
-      features: ['fullyAutonomous', 'lightsOut']
     }
   ]
 
