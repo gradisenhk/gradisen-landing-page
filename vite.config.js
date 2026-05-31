@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: './src/test/setup.js',
   },
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
     rollupOptions: {
