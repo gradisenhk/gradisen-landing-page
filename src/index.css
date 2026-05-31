@@ -1,0 +1,15 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: theme('colors.background.primary');
+  color: theme('colors.text.secondary');
+}

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "首頁",
+    "valueProps": "價值主張",
+    "roadmap": "產品路線圖",
+    "team": "團隊",
+    "contact": "聯絡我們"
+  },
+  "pageTitle": "Gradisen - 中小型倉庫邊緣AI解決方案",
+  "hero": {
+    "headline": "中小型倉庫即插即用邊緣AI解決方案，24小時內完成部署",
+    "subheadline": "硬體/軟體一體化解決方案，不需要改造倉庫、不需要鋪設軌道、不需要更換現有 WMS 系統 。專為兩千萬平米中小倉儲量身打造，總投入低於 12 萬港幣。",
+    "ctaPrimary": "參與問卷調查，共同塑造 GDSense"
+  },
+  "valueProp": {
+    "title": "核心價值主張",
+    "safety": {
+      "title": "倉庫安全與合規管理",
+      "description": "自動化每日安全隱患巡檢"
+    },
+    "damage": {
+      "title": "貨物損壞檢測",
+      "description": "即時視覺識別結構/包裝損壞"
+    },
+    "misplacement": {
+      "title": "錯放預防",
+      "description": "實體庫存與WMS數據交叉核對"
+    }
+  },
+  "roadmap": {
+    "title": "產品路線圖",
+    "lite": {
+      "name": "GDSense Lite",
+      "features": {
+        "autonomousSafety": "自主安全巡檢",
+        "fixedRoute": "固定路線導航",
+        "objectDetection": "即時物體檢測"
+      }
+    },
+    "pro": {
+      "name": "GDSense Pro",
+      "features": {
+        "dynamicNav": "動態導航",
+        "wmsSync": "即時WMS同步",
+        "fleetCoord": "多機器人車隊協調"
+      }
+    },
+    "platform": {
+      "name": "GDSense Platform",
+      "features": {
+        "autoSorting": "自動分揀整合",
+        "smartRacking": "智能貨架",
+        "endToEnd": "端到端自動化"
+      }
+    },
+    "dark": {
+      "name": "黑暗倉庫解決方案",
+      "features": {
+        "fullyAutonomous": "完全自主",
+        "lightsOut": "熄燈作業"
+      }
+    },
+    "currentPhase": "當前階段"
+  },
+  "team": {
+    "title": "我們的團隊",
+    "labels": {
+      "background": "學歷背景",
+      "expertise": "專業領域"
+    },
+    "wong": {
+      "name": "黃修譽",
+      "role": "執行長",
+      "background": "香港科技大學計算機工程",
+      "expertise": "基礎設施與系統整合專家"
+    },
+    "cheng": {
+      "name": "鄭謝智仁",
+      "role": "技術長",
+      "background": "香港科技大學計算機工程",
+      "expertise": "邊緣計算與具身AI專家"
+    },
+    "fong": {
+      "name": "方肇諄",
+      "role": "營運長",
+      "background": "香港城市大學",
+      "expertise": "執行與營運擴展專家"
+    },
+    "lam": {
+      "name": "林展丞",
+      "role": "首席架構師",
+      "background": "香港大學計算機科學",
+      "expertise": "機器人中間件與導航負責人"
+    }
+  },
+  "product": {
+    "title": "GDSense 是什麼？",
+    "subtitle": "專為中小型倉庫打造的自主巡邏與庫存機器人。",
+    "hardwareTitle": "硬體配置",
+    "robotPlaceholder": "機器人渲染圖 / PoC 照片",
+    "features": {
+      "base": {
+        "title": "自主移動底盤",
+        "desc": "流暢穿梭於動態倉庫地面。"
+      },
+      "edge": {
+        "title": "邊緣 AI 運算單元",
+        "desc": "深度學習視覺數據直接在機器上處理。"
+      },
+      "camera": {
+        "title": "高精度深度相機",
+        "desc": "用於掃描與環境建圖。"
+      }
+    },
+    "howTitle": "運作方式",
+    "steps": {
+      "1": {
+        "label": "現場巡檢",
+        "desc": "GDSense 機器人自動巡邏倉庫通道，作為現場移動的眼睛。"
+      },
+      "2": {
+        "label": "邊緣運算",
+        "desc": "視覺數據即時在本地邊緣伺服器處理，確保數據私隱與零延遲。"
+      },
+      "3": {
+        "label": "終端看板",
+        "desc": "管理人員透過網頁儀表板即時查看安全日誌、錯放警報及報告。"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Gradisen。保留所有權利。"
+  },
+  "contact": {
+    "title": "聯絡我們",
+    "tagline": "有任何疑問？歡迎隨時與我們聯繫。",
+    "formTitle": "發送訊息",
+    "emailLabel": "電郵聯絡",
+    "infoTitle": "聯絡資訊"
+  }
+}
