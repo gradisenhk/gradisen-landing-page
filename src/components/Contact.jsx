@@ -32,7 +32,7 @@ function Contact() {
                 <path d="M2 7l10 7 10-7" />
               </svg>
               <div>
-                <p className="text-xs font-mono text-brand-primary/60 tracking-widest uppercase mb-1">
+                <p className="text-xs text-brand-primary/60 tracking-widest uppercase mb-1">
                   {t('contact.emailLabel')}
                 </p>
                 <a

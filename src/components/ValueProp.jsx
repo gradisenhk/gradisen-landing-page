@@ -67,7 +67,7 @@ function ValuePropRow({ propKey, placeholderLabel, placeholderIcon, image, rever
           /* Placeholder — replace with <img> when real asset is ready */
           <div className="absolute inset-0 bg-background-secondary flex flex-col items-center justify-center gap-4 text-text-muted">
             {placeholderIcon}
-            <span className="text-xs font-mono text-center px-6 leading-relaxed opacity-60">
+            <span className="text-xs text-center px-6 leading-relaxed opacity-60">
               {placeholderLabel}
             </span>
             <div className="absolute inset-x-0 h-px bg-brand-primary/40 animate-scanline"
@@ -88,7 +88,7 @@ function ValuePropRow({ propKey, placeholderLabel, placeholderIcon, image, rever
       <div className={`flex flex-col justify-center w-full md:w-1/2 py-6 md:py-0 px-2 md:px-0 ${textRight ? 'md:text-right' : ''}`}>
         {/* Index number — subtle tech detail */}
         {/*
-        <span className="text-xl font-mono text-brand-primary/60 mb-2 tracking-widest uppercase">
+        <span className="text-xl text-brand-primary/60 mb-2 tracking-widest uppercase">
           {String(index + 1).padStart(2, '0')}
         </span>
         */}
