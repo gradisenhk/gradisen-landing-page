@@ -48,14 +48,14 @@ const propMeta = [
   },
 ]
 
-function ValuePropRow({ propKey, placeholderLabel, placeholderIcon, image, reverse, textRight, index }) {
+function ValuePropRow({ propKey, placeholderLabel, placeholderIcon, image, reverse, textRight }) {
   const { t } = useTranslation()
 
   return (
     <div className={`flex flex-col md:flex-row items-stretch gap-0 md:gap-16 ${reverse ? 'md:flex-row-reverse' : ''}`}>
 
       {/* Left — image or placeholder with horizontal fade mask */}
-      <div className="relative w-full md:w-1/2 min-h-[260px] flex-shrink-0 overflow-hidden rounded-xl">
+      <div className="relative w-full md:w-1/2 min-h-[260px] flex-shrink-0 overflow-hidden">
 
         {image ? (
           <img
@@ -86,13 +86,6 @@ function ValuePropRow({ propKey, placeholderLabel, placeholderIcon, image, rever
 
       {/* Right — text content */}
       <div className={`flex flex-col justify-center w-full md:w-1/2 py-6 md:py-0 px-2 md:px-0 ${textRight ? 'md:text-right' : ''}`}>
-        {/* Index number — subtle tech detail */}
-        {/*
-        <span className="text-xl text-brand-primary/60 mb-2 tracking-widest uppercase">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-        */}
-
         <h3 className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 leading-tight">
           {t(`valueProp.${propKey}.title`)}
         </h3>
@@ -128,7 +121,6 @@ function ValueProp() {
                 image={prop.image}
                 reverse={prop.reverse}
                 textRight={prop.textRight}
-                index={i}
               />
               {/* Divider between rows, not after last */}
               {i < propMeta.length - 1 && (

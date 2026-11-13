@@ -1,34 +1,107 @@
 {
   "nav": {
     "home": "Home",
-    "valueProps": "Value Propositions",
-    "roadmap": "Roadmap",
-    "team": "Team",
-    "contact": "Contact"
+    "gdsense": "GDSense",
+    "gdsmart": "GDSmart",
+    "about": "About",
+    "contact": "Contact",
+    "primary": "Primary",
+    "language": "Language",
+    "menu": "Menu"
   },
-  "pageTitle": "Gradisen - Edge AI for SME Warehouses",
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "pageTitle": "Gradisen - Warehouse robotics and property maintenance software",
+  "meta": {
+    "home": {
+      "title": "Gradisen - Warehouse robotics and property maintenance software",
+      "description": "Gradisen develops GDSense, an autonomous warehouse inspection robot, and GDSmart, a property maintenance and material management system."
+    },
+    "gdsense": {
+      "title": "GDSense - Edge AI for warehouse safety and inventory",
+      "description": "GDSense inspects warehouse aisles autonomously, detects cargo damage and reconciles stock with the WMS. It is operational within 24 hours, with no changes to racking or the WMS."
+    },
+    "gdsmart": {
+      "title": "Gradisen SMART - Property work assignment system",
+      "description": "Gradisen SMART unifies maintenance requests, work orders and material stock in one system, with a mobile app for field teams and a web console for approvals, stock control and reporting."
+    },
+    "about": {
+      "title": "About Gradisen",
+      "description": "Gradisen is a Hong Kong engineering team building warehouse robotics and property maintenance software."
+    },
+    "notFound": {
+      "title": "Page not found - Gradisen",
+      "description": "This page does not exist. Head back to the Gradisen home page."
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "We build warehouse robots and property maintenance software.",
+      "subheadline": "GDSense inspects warehouse aisles and reconciles stock with the WMS. GDSmart manages maintenance work orders and materials across the office and the site.",
+      "ctaPrimary": "Explore GDSense",
+      "ctaSecondary": "Explore GDSmart"
+    },
+    "scroll": "Scroll to our products",
+    "products": {
+      "title": "What we build",
+      "subtitle": "Two products for warehouse inspection and property maintenance.",
+      "gdsense": {
+        "name": "GDSense",
+        "line": "An autonomous robot that inspects warehouse aisles, detects cargo damage and reconciles stock with the WMS.",
+        "link": "View GDSense",
+        "imageAlt": "Warehouse aisles patrolled by the GDSense robot"
+      },
+      "gdsmart": {
+        "name": "GDSmart",
+        "line": "A work order and material management system for property maintenance teams.",
+        "link": "View GDSmart",
+        "imageAlt": "A phone in use on site"
+      }
+    },
+    "strengths": {
+      "title": "How we build",
+      "fit": {
+        "title": "Built around the site",
+        "desc": "We work with the racking, WMS and operating procedures already in place, so the site does not need to change to adopt the system."
+      },
+      "team": {
+        "title": "Hong Kong engineering team",
+        "desc": "Design, engineering and support are handled by the same team, so technical questions reach the people who built the product."
+      },
+      "support": {
+        "title": "Live within 24 hours",
+        "desc": "GDSense moves from installation to live operation within 24 hours."
+      }
+    }
+  },
   "hero": {
-    "headline": "Plug-and-Play Edge AI for Small-to-Medium Warehouses, fully deployed within 24 hours.",
-    "subheadline": "Upgrade your warehouse with zero modifications or WMS changes.",
-    "ctaPrimary": "Help Shape GDSense — Take Our Survey"
+    "headline": "GDSense: Plug-and-play edge AI for small and medium warehouses, live within 24 hours.",
+    "subheadline": "Deploy GDSense without modifying racking, the WMS or existing workflows.",
+    "ctaPrimary": "Take the GDSense survey",
+    "ctaSecondary": "Speak with our team",
+    "scroll": "Scroll to the product section"
   },
   "valueProp": {
-    "title": "Core Value Propositions",
+    "title": "Operational value",
+    "label": "Value",
+    "damageCaption": "Scan view: damage detected",
     "safety": {
-      "title": "Warehouse Safety & Compliance Management",
-      "description": "Automated daily safety hazard patrols"
+      "title": "Warehouse Safety and Compliance Management",
+      "description": "Daily automated inspection of safety hazards."
     },
     "damage": {
       "title": "Cargo Damage Detection",
-      "description": "Real-time visual identification of structural/packaging damage"
+      "description": "Real-time vision-based detection of structural and packaging damage."
     },
     "misplacement": {
       "title": "Misplacement Prevention",
-      "description": "Cross-checking physical inventory with WMS data"
+      "description": "Reconciles physical inventory with WMS records."
     }
   },
   "roadmap": {
-    "title": "Product Roadmap",
+    "title": "Product roadmap",
+    "label": "Roadmap",
     "lite": {
       "name": "GDSense Lite",
       "features": {
@@ -54,16 +127,17 @@
       }
     },
     "dark": {
-      "name": "Dark Warehouse Solution",
+      "name": "Dark warehouse solution",
       "features": {
         "fullyAutonomous": "Fully autonomous",
         "lightsOut": "Lights-out operations"
       }
     },
-    "currentPhase": "Current Phase"
+    "currentPhase": "Current phase"
   },
   "team": {
-    "title": "Our Team",
+    "title": "Our team",
+    "label": "Team",
     "labels": {
       "background": "Background",
       "expertise": "Expertise"
@@ -72,70 +146,205 @@
       "name": "Wong Sau Yu",
       "role": "CEO",
       "background": "HKUST Computer Engineering",
-      "expertise": "Infrastructure & system integration expert"
+      "expertise": "Infrastructure and systems integration"
     },
     "cheng": {
-      "name": "Cheng Tse Chi Yan",
+      "name": "Zheng Tse Chi Yan",
       "role": "CTO",
       "background": "HKUST Computer Science",
-      "expertise": "Edge Computing and Embodied AI specialist"
+      "expertise": "Edge computing and embodied AI"
     },
     "fong": {
       "name": "Fong Siu Chun",
       "role": "COO",
       "background": "CityUHK",
-      "expertise": "Execution and operations scale-up specialist"
+      "expertise": "Operations management and execution"
     },
     "lam": {
       "name": "Lam Chin Shing",
       "role": "Chief Architect",
       "background": "HKU Computer Science",
-      "expertise": "Robotics middleware and navigation lead"
+      "expertise": "Robotics middleware and navigation"
     }
   },
   "product": {
     "title": "What is GDSense?",
-    "subtitle": "An autonomous patrol and inventory robot purpose-built for SME warehouses.",
-    "hardwareTitle": "The Hardware",
-    "robotPlaceholder": "Robot Render / PoC Photo",
+    "label": "Product",
+    "subtitle": "An autonomous inspection and inventory robot for small and medium warehouses.",
+    "hardwareTitle": "The hardware",
+    "robotPlaceholder": "Robot render or PoC photograph",
     "features": {
       "base": {
-        "title": "Autonomous Moving Base",
-        "desc": "Navigates dynamic warehouse floors smoothly."
+        "title": "Autonomous moving base",
+        "desc": "Navigates warehouse aisles autonomously."
       },
       "edge": {
-        "title": "Edge AI Computer",
-        "desc": "Processes deep learning visual data right on the machine."
+        "title": "Edge AI computer",
+        "desc": "Runs vision models locally on the robot."
       },
       "camera": {
-        "title": "High-Precision Depth Cameras",
-        "desc": "Used for scanning and environment mapping."
+        "title": "High-precision depth cameras",
+        "desc": "Captures depth data for cargo scanning and environment mapping."
       }
     },
-    "howTitle": "How It Works",
+    "howTitle": "How it works",
     "steps": {
       "1": {
-        "label": "On the Floor",
-        "desc": "The GDSense robot automatically patrols through warehouse aisles, acting as the moving eyes on site."
+        "label": "Site inspection",
+        "desc": "The GDSense robot follows its route through the aisles and records rack and cargo conditions."
       },
       "2": {
-        "label": "On the Edge",
-        "desc": "Visual data is processed instantly on the local edge server to guarantee data privacy and zero delay."
+        "label": "Edge processing",
+        "desc": "Camera data is processed on the local edge server, keeping footage on site and avoiding network latency."
       },
       "3": {
-        "label": "On Your Screen",
-        "desc": "Managers view real-time safety logs, misplacement alerts, and reports via a web dashboard."
+        "label": "Management console",
+        "desc": "Managers review inspection records, misplacement alerts and reports in the web console."
       }
     }
   },
+  "gdsense": {
+    "cta": {
+      "title": "See GDSense in operation",
+      "text": "Share your site details and we will arrange a walkthrough.",
+      "button": "Arrange a walkthrough"
+    }
+  },
+  "gdsmart": {
+    "hero": {
+      "title": "Gradisen SMART",
+      "descriptor": "Systematic Maintenance Assignment & Resource Tracking System",
+      "subline": "One system for maintenance requests, work orders and material stock across the office and the site. Site teams report defects, engineers carry out the work, and managers approve completion.",
+      "cta": "Book a demo"
+    },
+    "outcomes": {
+      "title": "What changes",
+      "text": "Requests are logged, workload is visible, and stock records match physical stock.",
+      "requests": {
+        "title": "Every request becomes a work order",
+        "desc": "Site staff record the location, priority and a photo at the point of request. The engineer receives a work order with the details attached."
+      },
+      "visibility": {
+        "title": "Managers see the full workload",
+        "desc": "Work orders are grouped by status, engineer and property. Approvals, due dates and the day's schedule are visible without follow-up calls."
+      },
+      "stock": {
+        "title": "Materials are committed to the work order",
+        "desc": "Parts are reserved when the work order is raised, deducted on completion and released if the work is cancelled. Physical stock and system records stay aligned."
+      }
+    },
+    "parts": {
+      "title": "Built for the site and the office",
+      "subtitle": "The mobile app supports field work; the web console covers administration and oversight. Both operate on the same records.",
+      "mobile": {
+        "kicker": "On site",
+        "title": "Mobile app",
+        "lead": "For site staff and engineers working across corridors, plant rooms and basements, away from a desk.",
+        "points": {
+          "raise": "Raise a work order at the point of work, with location, priority and photos captured on site.",
+          "work": "Accept, schedule, start and complete work orders, with actual times recorded automatically.",
+          "parts": "Reserve materials against the work order and confirm available quantity before collection.",
+          "offline": "Continue working in basements and plant rooms; work orders raised offline are submitted when connectivity returns."
+        }
+      },
+      "web": {
+        "kicker": "In the office",
+        "title": "Web management console",
+        "lead": "For property managers and administrators who need a complete view of the property.",
+        "points": {
+          "see": "View all work orders by status, engineer and property, including the day's schedule and due dates.",
+          "approve": "Review photos and recorded times, then approve completed work or return it to the engineer.",
+          "stock": "Manage receipts, adjustments, stocktakes and low-stock alerts from one console.",
+          "reports": "Export work order, stock movement, material usage and low-stock reports as PDF."
+        }
+      }
+    },
+    "record": {
+      "title": "The office and the site share one record",
+      "text": "A work order raised on a phone appears in the office immediately. Materials reserved on site are held against the same stock the office sees. When the work order is closed, the recorded times, photos, notes and materials remain attached to it.",
+      "job": {
+        "title": "One history per work order",
+        "desc": "Status, photos, start and finish times, notes and materials remain with the work order, so the next assignee can continue without further enquiry."
+      },
+      "stock": {
+        "title": "A stock ledger for every change",
+        "desc": "Every receipt, issue, adjustment and stocktake is recorded with its reason and the user responsible. Historical entries remain in the ledger."
+      },
+      "access": {
+        "title": "Role-based access",
+        "desc": "Site staff, engineers and managers have access to the functions their role requires. Account administration remains with administrators."
+      },
+      "server": "GDSmart is deployed on your own server and stores account names and maintenance records. It does not store resident or visitor profiles, identifiable photographs, identity numbers, licence plate numbers or biometric data."
+    },
+    "cta": {
+      "title": "See it applied to your workflow",
+      "text": "We will walk through a repair and a material issue using your current process, and show what the office and the site would see.",
+      "button": "Book a demo"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Gradisen",
+      "subline": "A Hong Kong engineering team building warehouse robotics and property maintenance software."
+    },
+    "story": {
+      "title": "What we do",
+      "p1": "Gradisen builds robotics and software for warehouses and buildings. GDSense monitors the warehouse floor for safety hazards, cargo damage and misplaced stock. GDSmart manages maintenance requests, planned works and materials.",
+      "p2": "Most sites cannot suspend operations to install a new system, so both products work with the racking, WMS and processes already in place."
+    },
+    "approach": {
+      "title": "How we build",
+      "deploy": {
+        "title": "Live within 24 hours",
+        "desc": "GDSense moves from installation to live operation within 24 hours."
+      },
+      "fit": {
+        "title": "No infrastructure rebuild",
+        "desc": "We leave the racking and WMS in place, and the office requires no additional hardware."
+      },
+      "data": {
+        "title": "Data stays on site",
+        "desc": "GDSense processes camera footage on the local edge server, so it does not leave the building."
+      }
+    },
+    "cta": {
+      "title": "Questions about your site?",
+      "text": "Tell us how your site operates today.",
+      "button": "Contact us"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This link may be out of date, or the address contains a typo.",
+    "button": "Back to home"
+  },
   "footer": {
-    "copyright": "© {{year}} Gradisen. All rights reserved."
+    "copyright": "© {{year}} Gradisen. All rights reserved.",
+    "tagline": "Warehouse robotics and property maintenance software, built in Hong Kong.",
+    "productsTitle": "Products",
+    "companyTitle": "Company"
   },
   "contact": {
-    "title": "Contact Us",
-    "tagline": "Have a question? Feel free to reach out. We'd love to hear from you.",
-    "formTitle": "Get In Touch",
-    "emailLabel": "Email Us",
-    "infoTitle": "Contact Information"
+    "title": "Contact us",
+    "label": "Contact",
+    "tagline": "Speak with us about GDSense or GDSmart.",
+    "formTitle": "Send a message",
+    "infoTitle": "Contact information",
+    "responseNote": "We usually reply within two business days.",
+    "success": "Thank you. Your details are complete.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "contactNumber": "Contact number",
+      "message": "Message",
+      "submit": "Send message",
+      "optional": "Optional"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "companyRequired": "Please enter your company name.",
+      "contactRequired": "Please enter a contact number.",
+      "contactInvalid": "Enter a valid phone number (digits, +, -, brackets and spaces only)."
+    }
   }
 }

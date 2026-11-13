@@ -1,81 +1,187 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import SectionTitle from './SectionTitle'
+
+const PHONE_PATTERN = /^\+?[0-9\s()-]{7,20}$/
+
+function isValidPhone(value) {
+  return PHONE_PATTERN.test(value) && value.replace(/\D/g, '').length >= 8
+}
+
+const emptyValues = {
+  name: '',
+  company: '',
+  contactNumber: '',
+  message: '',
+}
+
+function Field({ id, label, value, onChange, error, type = 'text', autoComplete, hint, multiline = false }) {
+  const errorId = `${id}-error`
+  const shared = {
+    id,
+    name: id,
+    value,
+    onChange,
+    autoComplete,
+    'aria-invalid': error ? true : undefined,
+    'aria-describedby': error ? errorId : undefined,
+    className:
+      'block w-full rounded-md border border-border-dark bg-background-primary px-4 py-3 text-text-primary transition-colors duration-200 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/25',
+  }
+
+  return (
+    <div>
+      <div className="mb-2 flex items-baseline justify-between gap-3">
+        <label htmlFor={id} className="text-sm font-medium text-text-primary">
+          {label}
+        </label>
+        {hint}
+      </div>
+
+      {multiline ? <textarea {...shared} rows={4} /> : <input {...shared} type={type} />}
+
+      {error && (
+        <p id={errorId} role="alert" className="mt-2 text-xs text-red-600">
+          {error}
+        </p>
+      )}
+    </div>
+  )
+}
 
 function Contact() {
   const { t } = useTranslation()
+  const [values, setValues] = useState(emptyValues)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle')
+
+  const updateField = (field) => (event) => {
+    const { value } = event.target
+    setValues((current) => ({ ...current, [field]: value }))
+    setErrors((current) => (current[field] ? { ...current, [field]: undefined } : current))
+    if (status === 'success') setStatus('idle')
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const nextErrors = {}
+    if (!values.name.trim()) nextErrors.name = t('contact.errors.nameRequired')
+    if (!values.company.trim()) nextErrors.company = t('contact.errors.companyRequired')
+    if (!values.contactNumber.trim()) {
+      nextErrors.contactNumber = t('contact.errors.contactRequired')
+    } else if (!isValidPhone(values.contactNumber.trim())) {
+      nextErrors.contactNumber = t('contact.errors.contactInvalid')
+    }
+
+    setErrors(nextErrors)
+    setStatus(Object.keys(nextErrors).length === 0 ? 'success' : 'idle')
+  }
 
   return (
-    <section id="contact" className="py-16 px-4 bg-background-tertiary">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="bg-background-primary px-4 py-20">
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle title={t('contact.title')} subtitle={t('contact.tagline')} />
 
-        <div className="flex flex-col md:flex-row gap-8 md:items-stretch">
-
-          {/* Left — title + tagline */}
-          <div className="md:w-1/2 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-              {t('contact.title')}
-            </h2>
-            <p className="text-text-secondary">
-              {t('contact.tagline')}
-            </p>
-          </div>
-
-          {/* Right — contact info card */}
-          <div className="md:w-1/2 bg-surface border border-border rounded-lg p-8 flex flex-col gap-4">
+        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:gap-16">
+          {/* Contact information */}
+          <div className="flex flex-col border-t border-border pt-8">
             <h3 className="text-xl font-semibold text-text-primary">
               {t('contact.infoTitle')}
             </h3>
 
-            {/* Email */}
-            <div className="flex items-stretch gap-4">
-              <svg className="w-6 self-stretch text-brand-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="xMidYMid meet">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M2 7l10 7 10-7" />
-              </svg>
-              <div>
-                <p className="text-xs text-brand-primary/60 tracking-widest uppercase mb-1">
-                  {t('contact.emailLabel')}
-                </p>
-                <a
-                  href="mailto:team@gradisen.com"
-                  className="text-text-primary font-medium hover:text-brand-primary transition-colors duration-200 break-all"
-                >
-                  team@gradisen.com
-                </a>
-              </div>
+            <div className="mt-8 flex items-center gap-4">
+              <span className="material-symbols-outlined text-brand-primary" style={{ fontSize: '1.5rem', lineHeight: 1 }} aria-hidden="true">mail</span>
+              <a
+                href="mailto:team@gradisen.com"
+                className="break-all text-lg font-semibold text-text-primary transition-colors duration-200 hover:text-brand-primary"
+              >
+                team@gradisen.com
+              </a>
             </div>
 
-            {/* Address — uncomment when available
-            <div className="flex items-stretch gap-4">
-              <svg className="w-6 self-stretch text-brand-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="xMidYMid meet">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                <circle cx="12" cy="9" r="2.5" />
-              </svg>
-              <div>
-                <p className="text-xs text-brand-primary/60 tracking-widest uppercase mb-1">
-                  {t('contact.addressLabel')}
-                </p>
-                <p className="text-text-primary font-medium">Your address here</p>
-              </div>
-            </div>
-            */}
+            <p className="mt-10 max-w-sm text-sm leading-relaxed text-text-secondary">
+              {t('contact.responseNote')}
+            </p>
 
-            {/* Phone — uncomment when available
-            <div className="flex items-stretch gap-4">
-              <svg className="w-6 self-stretch text-brand-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="xMidYMid meet">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              <div>
-                <p className="text-xs text-brand-primary/60 tracking-widest uppercase mb-1">
-                  {t('contact.phoneLabel')}
-                </p>
-                <a href="tel:+85200000000" className="text-text-primary font-medium hover:text-brand-primary transition-colors duration-200">
-                  +852 0000 0000
-                </a>
-              </div>
-            </div>
-            */}
+            <a
+              href="https://forms.gle/zurn76xtQXupTg9x9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex w-fit items-center gap-2 rounded-md border border-brand-primary px-5 py-2.5 text-sm font-semibold text-brand-primary transition-colors duration-300 hover:bg-brand-primary hover:text-white"
+            >
+              {t('hero.ctaPrimary')}
+              <span className="material-symbols-outlined" style={{ fontSize: '1.1em', lineHeight: 1 }} aria-hidden="true">open_in_new</span>
+            </a>
           </div>
 
+          {/* Message form */}
+          <form
+            noValidate
+            onSubmit={handleSubmit}
+            aria-labelledby="contact-form-title"
+            className="border-t border-border pt-8"
+          >
+            <h3 id="contact-form-title" className="text-lg font-semibold text-text-primary">
+              {t('contact.formTitle')}
+            </h3>
+
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              <Field
+                id="contact-name"
+                label={t('contact.form.name')}
+                value={values.name}
+                onChange={updateField('name')}
+                error={errors.name}
+                autoComplete="name"
+              />
+              <Field
+                id="contact-company"
+                label={t('contact.form.company')}
+                value={values.company}
+                onChange={updateField('company')}
+                error={errors.company}
+                autoComplete="organization"
+              />
+              <div className="sm:col-span-2">
+                <Field
+                  id="contact-number"
+                  label={t('contact.form.contactNumber')}
+                  value={values.contactNumber}
+                  onChange={updateField('contactNumber')}
+                  error={errors.contactNumber}
+                  type="tel"
+                  autoComplete="tel"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <Field
+                  id="contact-message"
+                  label={t('contact.form.message')}
+                  value={values.message}
+                  onChange={updateField('message')}
+                  multiline
+                  hint={<span className="text-xs text-text-muted">{t('contact.form.optional')}</span>}
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-md bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-brand-primaryDark sm:w-auto"
+            >
+              {t('contact.form.submit')}
+            </button>
+
+            {status === 'success' && (
+              <p
+                role="status"
+                className="mt-6 rounded-md border-l-4 border-brand-primary bg-brand-primary/5 px-4 py-3 text-sm leading-relaxed text-text-primary"
+              >
+                {t('contact.success')}
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </section>

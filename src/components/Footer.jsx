@@ -1,30 +1,89 @@
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import logoIcon from '../assets/icon_proto_yellow.png'
+import logoWords from '../assets/icon_words.png'
 
 function Footer() {
   const { t } = useTranslation()
+  const { pathname, hash } = useLocation()
+
+  const handleHashLink = (event, to) => {
+    const targetHash = to.split('#')[1]
+    if (!targetHash || pathname !== '/' || hash !== `#${targetHash}`) return
+
+    event.preventDefault()
+    const target = document.getElementById(targetHash)
+    if (target && typeof target.scrollIntoView === 'function') {
+      target.scrollIntoView()
+    }
+  }
+
+  const productLinks = [
+    { to: '/gdsense', label: t('nav.gdsense') },
+    { to: '/gdsmart', label: t('nav.gdsmart') },
+  ]
+
+  const companyLinks = [
+    { to: '/',        label: t('nav.home') },
+    { to: '/about',   label: t('nav.about') },
+    { to: '/#contact', label: t('nav.contact') },
+  ]
 
   return (
-    <footer className="bg-background-primary border-t border-border">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-text-muted">
-
-        {/* Logo + email — left */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <img src={logoIcon} alt="Gradisen logo" className="h-5 w-auto" />
-            <span className="font-bold text-brand-primary">Gradisen</span>
+    <footer className="bg-footer text-white/70">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <img src={logoWords} alt="Gradisen" className="h-7 w-auto" />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed">{t('footer.tagline')}</p>
+            <a
+              href="mailto:team@gradisen.com"
+              className="mt-4 inline-block break-all text-sm transition-colors duration-200 hover:text-brand-primary"
+            >
+              team@gradisen.com
+            </a>
           </div>
-          <a
-            href="mailto:team@gradisen.com"
-            className="hover:text-brand-primary transition-colors duration-200"
-          >
-            team@gradisen.com
-          </a>
+
+          {/* Products */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+              {t('footer.productsTitle')}
+            </h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {productLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="transition-colors duration-200 hover:text-brand-primary">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+              {t('footer.companyTitle')}
+            </h3>
+            <ul className="mt-4 space-y-3  text-sm">
+              {companyLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    onClick={(event) => handleHashLink(event, link.to)}
+                    className="transition-colors duration-200 hover:text-brand-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Copyright — right */}
-        <span>{t('footer.copyright', { year: new Date().getFullYear() })}</span>
-
+        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs">
+          {t('footer.copyright', { year: new Date().getFullYear() })}
+        </div>
       </div>
     </footer>
   )

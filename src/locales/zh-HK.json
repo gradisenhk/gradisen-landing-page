@@ -1,48 +1,121 @@
 {
   "nav": {
     "home": "首頁",
-    "valueProps": "價值主張",
-    "roadmap": "產品路線圖",
-    "team": "團隊",
-    "contact": "聯絡我們"
+    "gdsense": "GDSense",
+    "gdsmart": "GDSmart",
+    "about": "關於我們",
+    "contact": "聯絡我們",
+    "primary": "主導覽",
+    "language": "語言",
+    "menu": "選單"
   },
-  "pageTitle": "Gradisen - 中小型倉庫邊緣AI解決方案",
+  "a11y": {
+    "skip": "跳至內容"
+  },
+  "pageTitle": "Gradisen - 倉庫巡檢機械人與物業管理工作分配系統",
+  "meta": {
+    "home": {
+      "title": "Gradisen - 倉庫巡檢機械人與物業管理工作分配系統",
+      "description": "Gradisen 專注研發倉庫巡檢機械人 GDSense 及物業管理工作分配系統 GDSmart，協助企業管理維修工單、日常保養與物料庫存。"
+    },
+    "gdsense": {
+      "title": "GDSense - 倉庫安全與庫存管理的邊緣 AI",
+      "description": "GDSense 於倉庫通道自主巡檢，識別貨物損壞並核對庫存；可對接現有 WMS，並於 24 小時內投入運作。"
+    },
+    "gdsmart": {
+      "title": "Gradisen SMART - 物業管理工作分配系統",
+      "description": "Gradisen SMART 統一管理維修請求、工單與物料庫存：現場以手機應用程式處理，辦公室透過網頁管理後台審批、監控庫存及匯出報表。"
+    },
+    "about": {
+      "title": "關於 Gradisen",
+      "description": "Gradisen 是香港工程團隊，專注研發倉庫巡檢機械人與物業管理工作分配系統。"
+    },
+    "notFound": {
+      "title": "找不到頁面 - Gradisen",
+      "description": "此頁面不存在，請回到 Gradisen 首頁。"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "倉庫巡檢機械人與物業管理工作分配系統",
+      "subheadline": "GDSense 負責倉庫通道巡檢、貨物損壞檢測與庫存核對；GDSmart 統一管理維修工單、日常保養及物料出入。",
+      "ctaPrimary": "了解 GDSense",
+      "ctaSecondary": "了解 GDSmart"
+    },
+    "scroll": "捲動至產品",
+    "products": {
+      "title": "產品",
+      "subtitle": "分別針對倉庫巡檢與物業管理的營運需求。",
+      "gdsense": {
+        "name": "GDSense",
+        "line": "自主巡檢倉庫通道，識別貨物損壞，並與 WMS 核對庫存。",
+        "link": "查看 GDSense",
+        "imageAlt": "GDSense 機械人在倉庫通道巡檢"
+      },
+      "gdsmart": {
+        "name": "GDSmart",
+        "line": "統一管理維修工單、日常保養與物料庫存，辦公室與現場共用同一份紀錄。",
+        "link": "查看 GDSmart",
+        "imageAlt": "現場人員以手機處理維修工作"
+      }
+    },
+    "strengths": {
+      "title": "我們的工作方式",
+      "fit": {
+        "title": "沿用現有基建",
+        "desc": "系統按現場實際環境配置，無須改動現有貨架、WMS 或作業流程。"
+      },
+      "team": {
+        "title": "香港工程團隊",
+        "desc": "設計、工程與支援由同一團隊負責，技術問題由開發團隊直接跟進。"
+      },
+      "support": {
+        "title": "24 小時內完成部署",
+        "desc": "GDSense 由安裝、配置至正式運作，可於 24 小時內完成。"
+      }
+    }
+  },
   "hero": {
-    "headline": "中小型倉庫即插即用邊緣AI解決方案，24小時內完成部署",
-    "subheadline": "硬體/軟體一體化解決方案，不需要改造倉庫、不需要鋪設軌道、不需要更換現有 WMS 系統，專為兩千萬平米中小倉儲量身打造。",
-    "ctaPrimary": "參與問卷調查，共同塑造 GDSense"
+    "headline": "GDSense：適用於中小型倉庫的邊緣 AI 巡檢機械人，24 小時內完成部署",
+    "subheadline": "GDSense 採用軟硬件整合方案，按中小型倉儲的環境配置，毋須改造貨架、鋪設軌道或更換現有 WMS。",
+    "ctaPrimary": "填寫 GDSense 產品問卷",
+    "ctaSecondary": "與我們的團隊聯絡",
+    "scroll": "捲動至產品介紹"
   },
   "valueProp": {
-    "title": "核心價值主張",
+    "title": "營運價值",
+    "label": "價值",
+    "damageCaption": "掃描畫面：偵測到貨物損壞",
     "safety": {
       "title": "倉庫安全與合規管理",
-      "description": "自動化每日安全隱患巡檢"
+      "description": "每日自動巡查安全隱患"
     },
     "damage": {
       "title": "貨物損壞檢測",
-      "description": "即時視覺識別結構/包裝損壞"
+      "description": "透過視覺模型即時識別結構及包裝損壞"
     },
     "misplacement": {
       "title": "錯放預防",
-      "description": "實體庫存與WMS數據交叉核對"
+      "description": "將現場庫存與 WMS 紀錄交叉核對"
     }
   },
   "roadmap": {
     "title": "產品路線圖",
+    "label": "路線圖",
     "lite": {
       "name": "GDSense Lite",
       "features": {
         "autonomousSafety": "自主安全巡檢",
         "fixedRoute": "固定路線導航",
-        "objectDetection": "即時物體檢測"
+        "objectDetection": "即時物件偵測"
       }
     },
     "pro": {
       "name": "GDSense Pro",
       "features": {
         "dynamicNav": "動態導航",
-        "wmsSync": "即時WMS同步",
-        "fleetCoord": "多機器人車隊協調"
+        "wmsSync": "即時 WMS 同步",
+        "fleetCoord": "多機械人協同調度"
       }
     },
     "platform": {
@@ -54,88 +127,224 @@
       }
     },
     "dark": {
-      "name": "黑暗倉庫解決方案",
+      "name": "黑燈倉庫解決方案",
       "features": {
-        "fullyAutonomous": "完全自主",
+        "fullyAutonomous": "全自主運作",
         "lightsOut": "熄燈作業"
       }
     },
-    "currentPhase": "當前階段"
+    "currentPhase": "現階段"
   },
   "team": {
     "title": "我們的團隊",
+    "label": "團隊",
     "labels": {
       "background": "學歷背景",
       "expertise": "專業領域"
     },
     "wong": {
       "name": "黃修譽",
-      "role": "執行長",
+      "role": "行政總裁",
       "background": "香港科技大學計算機工程",
-      "expertise": "基礎設施與系統整合專家"
+      "expertise": "基礎設施與系統整合"
     },
     "cheng": {
       "name": "鄭謝智仁",
-      "role": "技術長",
+      "role": "技術總監",
       "background": "香港科技大學計算機科學",
-      "expertise": "邊緣計算與具身AI專家"
+      "expertise": "邊緣運算與具身 AI"
     },
     "fong": {
       "name": "方肇諄",
-      "role": "營運長",
+      "role": "營運總監",
       "background": "香港城市大學",
-      "expertise": "執行與營運擴展專家"
+      "expertise": "營運管理與執行"
     },
     "lam": {
       "name": "林展丞",
       "role": "首席架構師",
       "background": "香港大學計算機科學",
-      "expertise": "機器人中間件與導航負責人"
+      "expertise": "機械人中間件與導航"
     }
   },
   "product": {
-    "title": "GDSense 是什麼？",
-    "subtitle": "專為中小型倉庫打造的自主巡邏與庫存機器人。",
-    "hardwareTitle": "硬體配置",
-    "robotPlaceholder": "機器人渲染圖 / PoC 照片",
+    "title": "倉庫巡檢機械人",
+    "label": "產品",
+    "subtitle": "專為中小型倉庫的巡檢與庫存核對需求而設。",
+    "hardwareTitle": "硬件配置",
+    "robotPlaceholder": "機械人渲染圖或 PoC 照片",
     "features": {
       "base": {
         "title": "自主移動底盤",
-        "desc": "流暢穿梭於動態倉庫地面。"
+        "desc": "按預設路線於倉庫通道自主行駛。"
       },
       "edge": {
         "title": "邊緣 AI 運算單元",
-        "desc": "深度學習視覺數據直接在機器上處理。"
+        "desc": "視覺模型於機械人端運行，影像無須上傳雲端。"
       },
       "camera": {
         "title": "高精度深度相機",
-        "desc": "用於掃描與環境建圖。"
+        "desc": "擷取深度影像，用於貨物掃描與環境建圖。"
       }
     },
     "howTitle": "運作方式",
     "steps": {
       "1": {
         "label": "現場巡檢",
-        "desc": "GDSense 機器人自動巡邏倉庫通道，作為現場移動的眼睛。"
+        "desc": "GDSense 按預設路線巡檢倉庫通道，記錄貨架與貨物狀況。"
       },
       "2": {
         "label": "邊緣運算",
-        "desc": "視覺數據即時在本地邊緣伺服器處理，確保數據私隱與零延遲。"
+        "desc": "影像於本地邊緣伺服器即時處理，數據保留於場地內，並降低網絡延遲。"
       },
       "3": {
-        "label": "終端看板",
-        "desc": "管理人員透過網頁儀表板即時查看安全日誌、錯放警報及報告。"
+        "label": "管理後台",
+        "desc": "管理人員可於網頁後台查閱巡檢紀錄、錯放警報及報表。"
       }
     }
   },
+  "gdsense": {
+    "cta": {
+      "title": "安排 GDSense 現場示範",
+      "text": "提供場地資料，我們將安排現場或線上示範。",
+      "button": "安排示範"
+    }
+  },
+  "gdsmart": {
+    "hero": {
+      "title": "Gradisen SMART",
+      "descriptor": "物業管理工作分配系統",
+      "subline": "維修請求、工單與物料庫存納入同一套系統，讓辦公室與現場共享同一份營運紀錄。前線人員回報問題，工程師執行維修，管理人員審批完工。",
+      "cta": "預約示範"
+    },
+    "outcomes": {
+      "title": "日常運作的轉變",
+      "text": "每項維修請求均有紀錄，工作量清晰可見，庫存紀錄與實際庫存一致。",
+      "requests": {
+        "title": "每項維修請求均生成工單",
+        "desc": "前線人員於現場記錄位置、優先次序及相片，工程師即時收到附有完整資料的工單。"
+      },
+      "visibility": {
+        "title": "管理人員掌握整體工作量",
+        "desc": "工單按狀態、負責工程師及物業集中於同一清單，審批進度、到期日及當日安排均清晰可見，管理人員無須逐項查詢進度。"
+      },
+      "stock": {
+        "title": "物料按工單流轉",
+        "desc": "開立工單時預留物料，完工時扣減，取消時釋放。實際庫存與系統紀錄保持一致。"
+      }
+    },
+    "parts": {
+      "title": "為現場與辦公室而設",
+      "subtitle": "手機應用程式支援現場作業，網頁管理後台負責統籌與審批，兩者共用同一份紀錄。",
+      "mobile": {
+        "kicker": "現場",
+        "title": "手機應用程式",
+        "lead": "適合前線人員及工程師在走廊、機房及地下室等現場環境使用。",
+        "points": {
+          "raise": "於工作現場開立工單，即時記錄位置、優先次序及相片。",
+          "work": "透過手機接單、排期、開始及完成工作，實際時間由系統自動記錄。",
+          "parts": "查閱可用庫存，按工單預留物料，並於出庫前一次領取。",
+          "offline": "即使地下室或機房訊號微弱，仍可建立工單，系統會於恢復連線後自動提交。"
+        }
+      },
+      "web": {
+        "kicker": "辦公室",
+        "title": "網頁管理後台",
+        "lead": "供物業管理人員及系統管理員使用，全面掌握物業的工單與庫存狀況。",
+        "points": {
+          "see": "按狀態、負責工程師及物業查閱所有工單，包括當日安排與到期日。",
+          "approve": "核對相片及系統時間紀錄後，審批完工或退回工程師跟進。",
+          "stock": "於同一後台處理收貨、庫存調整、盤點及低庫存預警。",
+          "reports": "匯出工單、庫存異動、物料領用及低庫存 PDF 報表。"
+        }
+      }
+    },
+    "record": {
+      "title": "辦公室與現場共享同一份紀錄",
+      "text": "手機開立的工單即時同步至辦公室；現場預留的物料，扣減的是辦公室所見的同一批庫存。工單完成後，時間、相片、備註及用料仍完整保留於該工單。",
+      "job": {
+        "title": "每張工單保留完整歷程",
+        "desc": "狀態、相片、開始及完成時間、備註與用料集中保存，接任人員無須另行查詢即可接手。"
+      },
+      "stock": {
+        "title": "每次庫存變動均有紀錄",
+        "desc": "收貨、發出、調整及盤點均記錄原因與經手人，歷史紀錄不會被覆蓋。"
+      },
+      "access": {
+        "title": "權限按角色分配",
+        "desc": "前線人員、工程師及管理人員僅可存取其角色所需功能，帳戶管理由系統管理員負責。"
+      },
+      "server": "GDSmart 部署於物業管理公司自有的伺服器，僅儲存帳戶名稱及維修紀錄。系統不儲存住戶或訪客資料、可辨識人物的相片、身份證號碼、車牌號碼或生物特徵資料。"
+    },
+    "cta": {
+      "title": "按現行流程演示",
+      "text": "我們將按你們現行的維修流程及物料清單，演示由報修、派工、完工驗收到庫存扣減的完整流程。",
+      "button": "預約示範"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "關於 Gradisen",
+      "subline": "香港工程團隊，專注研發倉庫巡檢機械人與物業管理工作分配系統。"
+    },
+    "story": {
+      "title": "公司簡介",
+      "p1": "Gradisen 為倉庫及樓宇提供機械人與軟件方案。GDSense 負責倉庫巡檢，涵蓋安全隱患、貨物損壞及錯放；GDSmart 管理維修工單、日常保養與物料出入。",
+      "p2": "兩套產品均按現場現有條件設計。場地一般無法為導入新系統而停運，因此我們沿用現有貨架、WMS 及作業流程，將改動減至最低。"
+    },
+    "approach": {
+      "title": "設計原則",
+      "deploy": {
+        "title": "24 小時內完成部署",
+        "desc": "GDSense 由安裝、配置至正式運作，可於 24 小時內完成。"
+      },
+      "fit": {
+        "title": "不改動現有基建",
+        "desc": "貨架及 WMS 維持不變，辦公室端毋須增設硬件。"
+      },
+      "data": {
+        "title": "數據留在現場",
+        "desc": "GDSense 的影像於本地邊緣伺服器處理，不會離開所屬樓宇。"
+      }
+    },
+    "cta": {
+      "title": "查詢與示範",
+      "text": "請提供場地現況，我們將建議合適的導入範圍。",
+      "button": "聯絡我們"
+    }
+  },
+  "notFound": {
+    "title": "找不到頁面",
+    "text": "這條連結可能已經失效，或網址有誤。",
+    "button": "回到首頁"
+  },
   "footer": {
-    "copyright": "© {{year}} Gradisen。保留所有權利。"
+    "copyright": "© {{year}} Gradisen。保留所有權利。",
+    "tagline": "香港研發，應用於倉庫與物業管理的機械人及軟件。",
+    "productsTitle": "產品",
+    "companyTitle": "公司"
   },
   "contact": {
     "title": "聯絡我們",
-    "tagline": "有任何疑問？歡迎隨時與我們聯繫。",
-    "formTitle": "發送訊息",
-    "emailLabel": "電郵聯絡",
-    "infoTitle": "聯絡資訊"
+    "label": "聯絡",
+    "tagline": "如對 GDSense 或 GDSmart 有任何查詢，歡迎與我們聯絡。",
+    "formTitle": "查詢表格",
+    "infoTitle": "聯絡資訊",
+    "responseNote": "我們通常會於兩個工作天內回覆。",
+    "success": "資料已填妥。",
+    "form": {
+      "name": "姓名",
+      "company": "公司",
+      "contactNumber": "聯絡電話",
+      "message": "查詢內容",
+      "submit": "提交",
+      "optional": "選填"
+    },
+    "errors": {
+      "nameRequired": "請填寫姓名。",
+      "companyRequired": "請填寫公司名稱。",
+      "contactRequired": "請填寫聯絡電話。",
+      "contactInvalid": "請輸入有效的電話號碼（只限數字、+、-、括號及空格）。"
+    }
   }
 }

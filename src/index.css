@@ -13,3 +13,13 @@ body {
   background-color: theme('colors.background.primary');
   color: theme('colors.text.secondary');
 }
+
+/* Keep anchor targets clear of the fixed header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Headings receive focus after route changes for screen readers, without a visible ring */
+main h1:focus {
+  outline: none;
+}

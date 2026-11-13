@@ -9,32 +9,36 @@ export default {
       colors: {
         // Brand Colors
         brand: {
-          primary: '#f59e0b',    // Amber-500 - Primary CTAs, active states
-          secondary: '#3b82f6',  // Blue-500 - Links, informational elements
-          accent: '#f97316',     // Orange-500 - Errors, warnings
+          primary: '#f59e0b',      // Amber-500 - Primary CTAs, active states
+          primaryDark: '#d97706',  // Amber-600 - Hover state for primary actions
+          secondary: '#3b82f6',    // Blue-500 - Links, informational elements
+          accent: '#f97316',       // Orange-500 - Errors, warnings
         },
-        
+
         // Background Colors
         background: {
           primary: '#ffffff',    // White - Main page background
           secondary: '#f9fafb',  // Gray-50 - Card backgrounds
           tertiary: '#f3f4f6',   // Gray-100 - Section backgrounds
         },
-        
+
+        // Section band used to alternate white sections
+        band: '#f8f9fa',
+
         // Surface Colors (for cards, panels)
         surface: {
           DEFAULT: '#ffffff',    // Default surface
           dark: '#f9fafb',       // Gray-50 - Darker surface
           light: '#fafafa',      // Gray-50 lighter - Lighter surface
         },
-        
+
         // Border Colors
         border: {
           DEFAULT: '#e5e7eb',    // Gray-200 - Default border
           light: '#f3f4f6',      // Gray-100 - Lighter border
           dark: '#d1d5db',       // Gray-300 - Darker border
         },
-        
+
         // Text Colors
         text: {
           primary: '#111827',    // Gray-900 - Headlines, important text
@@ -42,6 +46,9 @@ export default {
           muted: '#6b7280',      // Gray-500 - Supporting text
           disabled: '#9ca3af',   // Gray-400 - Disabled text
         },
+
+        // Dark footer / navigation
+        footer: '#3a3e3e',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
