@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gradisen</title>
+  </head>
+  <body>
+    <script>
+      // GitHub Pages serves this file for paths it cannot resolve. Keep the
+      // requested URL, then hand control back to the single-page app.
+      sessionStorage.setItem('redirect', window.location.href);
+      window.location.replace('/');
+    </script>
+  </body>
+</html>
