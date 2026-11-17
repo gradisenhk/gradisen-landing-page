@@ -1,7 +1,7 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Contact from '../components/Contact'
+import Contact, { buildMailto } from '../components/Contact'
 
 // Mock react-i18next — returns the key as the translation value
 vi.mock('react-i18next', () => ({
@@ -10,6 +10,19 @@ vi.mock('react-i18next', () => ({
     i18n: { language: 'en', changeLanguage: vi.fn() },
   }),
 }))
+
+let mailtoHref = ''
+
+beforeEach(() => {
+  mailtoHref = ''
+  vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function () {
+    mailtoHref = this.href
+  })
+})
+
+afterEach(() => {
+  vi.restoreAllMocks()
+})
 
 // Helper: render and return the submit button and field accessors
 function setup() {
@@ -37,16 +50,43 @@ async function fillValidForm(fields, user, overrides = {}) {
 // ─── Valid submission ────────────────────────────────────────────────────────
 
 describe('valid form submission', () => {
-  it('shows success message when all required fields are filled correctly', async () => {
+  it('opens the mail client with the entered details', async () => {
     const user = userEvent.setup()
     const fields = setup()
 
     await fillValidForm(fields, user)
+    await user.type(fields.messageInput(), 'Please arrange a demo.')
     await user.click(fields.submitButton())
 
     await waitFor(() => {
-      expect(screen.getByText('contact.success')).toBeInTheDocument()
+      expect(mailtoHref).toContain('mailto:team@gradisen.com')
     })
+
+    const decoded = decodeURIComponent(mailtoHref)
+    expect(decoded).toContain('John Doe')
+    expect(decoded).toContain('Acme Ltd')
+    expect(decoded).toContain('+852 9123 4567')
+    expect(decoded).toContain('Please arrange a demo.')
+  })
+
+  it('builds a localized mailto link', () => {
+    const href = buildMailto(
+      {
+        name: '陳大文',
+        company: '甲公司',
+        contactNumber: '91234567',
+        message: '想安排示範。',
+      },
+      (key) => key,
+      'zh-HK'
+    )
+
+    const decoded = decodeURIComponent(href)
+    expect(decoded).toContain('contact.form.name：陳大文')
+    expect(decoded).toContain('contact.form.company：甲公司')
+    expect(decoded).toContain('contact.form.contactNumber：91234567')
+    expect(decoded).toContain('contact.form.message：')
+    expect(decoded).toContain('想安排示範。')
   })
 
   it('does not show any field errors on valid submission', async () => {
@@ -117,15 +157,16 @@ describe('empty required fields', () => {
     })
   })
 
-  it('does not show success message when required fields are empty', async () => {
+  it('does not open the mail client when required fields are empty', async () => {
     const user = userEvent.setup()
     setup()
 
     await user.click(screen.getByRole('button', { name: 'contact.form.submit' }))
 
     await waitFor(() => {
-      expect(screen.queryByText('contact.success')).not.toBeInTheDocument()
+      expect(screen.getByText('contact.errors.nameRequired')).toBeInTheDocument()
     })
+    expect(mailtoHref).toBe('')
   })
 })
 
@@ -197,22 +238,6 @@ describe('error clearing', () => {
     })
   })
 
-  it('clears success message when user modifies form after successful submission', async () => {
-    const user = userEvent.setup()
-    const fields = setup()
-
-    await fillValidForm(fields, user)
-    await user.click(fields.submitButton())
-    await waitFor(() => {
-      expect(screen.getByText('contact.success')).toBeInTheDocument()
-    })
-
-    // Modify a field — success message should disappear
-    await user.type(fields.messageInput(), 'Hello')
-    await waitFor(() => {
-      expect(screen.queryByText('contact.success')).not.toBeInTheDocument()
-    })
-  })
 })
 
 // ─── Whitespace trimming ─────────────────────────────────────────────────────

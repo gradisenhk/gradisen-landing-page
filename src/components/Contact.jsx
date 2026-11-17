@@ -49,17 +49,30 @@ function Field({ id, label, value, onChange, error, type = 'text', autoComplete,
   )
 }
 
+export function buildMailto(values, t, language = 'en') {
+  const colon = language.startsWith('zh') ? '：' : ': '
+  const subject = `${t('contact.title')} - ${values.name.trim()}`
+  const body = [
+    `${t('contact.form.name')}${colon}${values.name.trim()}`,
+    `${t('contact.form.company')}${colon}${values.company.trim()}`,
+    `${t('contact.form.contactNumber')}${colon}${values.contactNumber.trim()}`,
+    '',
+    `${t('contact.form.message')}${colon}`,
+    values.message.trim(),
+  ].join('\r\n')
+
+  return `mailto:team@gradisen.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
 function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [values, setValues] = useState(emptyValues)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle')
 
   const updateField = (field) => (event) => {
     const { value } = event.target
     setValues((current) => ({ ...current, [field]: value }))
     setErrors((current) => (current[field] ? { ...current, [field]: undefined } : current))
-    if (status === 'success') setStatus('idle')
   }
 
   const handleSubmit = (event) => {
@@ -75,7 +88,14 @@ function Contact() {
     }
 
     setErrors(nextErrors)
-    setStatus(Object.keys(nextErrors).length === 0 ? 'success' : 'idle')
+    if (Object.keys(nextErrors).length > 0) return
+
+    const link = document.createElement('a')
+    link.href = buildMailto(values, t, i18n.language)
+    link.rel = 'noopener'
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
   }
 
   return (
@@ -173,14 +193,6 @@ function Contact() {
               {t('contact.form.submit')}
             </button>
 
-            {status === 'success' && (
-              <p
-                role="status"
-                className="mt-6 rounded-md border-l-4 border-brand-primary bg-brand-primary/5 px-4 py-3 text-sm leading-relaxed text-text-primary"
-              >
-                {t('contact.success')}
-              </p>
-            )}
           </form>
         </div>
       </div>
