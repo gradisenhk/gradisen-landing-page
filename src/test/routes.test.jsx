@@ -15,7 +15,7 @@ function renderAt(path) {
 describe('routes', () => {
   test.each([
     ['/', 'We build warehouse robots and property maintenance software.'],
-    ['/gdsense', 'GDSense: Plug-and-play edge AI for small and medium warehouses, live within 24 hours.'],
+    ['/gdsense', 'Plug-and-play edge AI for small and medium warehouses, live within 24 hours.'],
     ['/gdsmart', 'Gradisen SMART'],
     ['/about', 'About Gradisen'],
   ])('%s renders its page heading', (path, heading) => {

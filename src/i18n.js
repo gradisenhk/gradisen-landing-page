@@ -6,18 +6,32 @@ import enTranslations from './locales/en.json';
 import zhHKTranslations from './locales/zh-HK.json';
 import zhCNTranslations from './locales/zh-CN.json';
 
-// Map any browser locale to one of our three supported codes
-function resolveLanguage(browserLang) {
-  if (!browserLang) return 'en';
-  const lang = browserLang.toLowerCase();
-  if (lang === 'zh-cn' || lang === 'zh-hans') return 'zh-CN';
-  if (lang.startsWith('zh')) return 'zh-HK'; // zh-TW, zh-HK, zh, etc.
-  return 'en';
-}
+// Map browser locales to the three supported site languages.
+// Leave other languages untouched so the detector can move on to the next
+// entry in the visitor's preference list instead of stopping at the first
+// unsupported language.
+export function normalizeLanguage(lang) {
+  if (!lang) return lang;
 
-const detectedLang = resolveLanguage(
-  localStorage.getItem('i18nextLng') || navigator.language || navigator.languages?.[0]
-);
+  const code = lang.toLowerCase();
+
+  if (
+    code === 'zh-cn' ||
+    code === 'zh-sg' ||
+    code === 'zh-my' ||
+    code.startsWith('zh-hans')
+  ) {
+    return 'zh-CN';
+  }
+
+  // Taiwan is not a target market, so other Chinese locales fall back to
+  // Hong Kong Traditional Chinese for now.
+  if (code.startsWith('zh')) return 'zh-HK';
+
+  if (code === 'en' || code.startsWith('en-')) return 'en';
+
+  return lang;
+}
 
 i18n
   .use(LanguageDetector)
@@ -28,12 +42,12 @@ i18n
       'zh-HK': { translation: zhHKTranslations },
       'zh-CN': { translation: zhCNTranslations }
     },
-    lng: detectedLang,
     fallbackLng: 'en',
+    supportedLngs: ['en', 'zh-HK', 'zh-CN'],
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
-      convertDetectedLanguage: resolveLanguage,
+      convertDetectedLanguage: normalizeLanguage,
     },
     interpolation: {
       escapeValue: false

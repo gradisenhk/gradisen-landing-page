@@ -51,7 +51,7 @@ export default {
         footer: '#3a3e3e',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Segoe UI Variable Text', 'Segoe UI', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       keyframes: {
